@@ -96,13 +96,16 @@ int main()
 			Gizmos::addLine(vec3(-50, 0, -50 + i), vec3(50, 0, -50 + i), i % 10 == 0 ? red : white);
 		}
 
-		Gizmos::addSphere(m4rotation[3].xyz, 5, 48, 48, red, &m4rotation);
+		Gizmos::addSphere(m4rotation[3].xyz, 5, 16, 16, red, &m4rotation);
 		
-		for (int i = 0; i < 1000; ++i)
+		for (int i = 0; i < 10; ++i)
 		{
-			mat4 m4rotationchild = m4rotation * glm::translate(vec3(6 + i, (rand() % 10) - 5, (rand() % 10) - 5)) * glm::rotate((float)timer, vec3(0, 1 / rand() % 10, 0));
-			Gizmos::addSphere(m4rotationchild[3].xyz, 0.1, 3, 1, red, &m4rotationchild);
+			mat4 m4rotationchild = (m4rotation * glm::rotate((float)timer, vec3(i % 2, i % 3, i % 4))) * glm::translate(vec3(i * 2, 0, 0)) * glm::rotate((float)timer, vec3(i % 2, i % 3, i % 4));
+			Gizmos::addSphere(m4rotationchild[3].xyz, 1, 16, 16, red, &m4rotationchild);
 		}
+		
+
+
 		/*
 		vec4 pew(.25, .5, .75, 1);
 
