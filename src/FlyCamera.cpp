@@ -44,28 +44,17 @@ void FlyCamera::Update(float a_fDeltaTime)
 	m_fXPos /= 1280 / 2.f;
 	m_fYPos /= 720 / 2.f;
 
-	m_fXPos *= 3;
-	m_fYPos *= 3;
+	m_fXPos *= -3;
+	m_fYPos *= -3;
 
 	vec4 temp = m_m4WorldTransform[0];
-	vec4 yaw = rotate((float)m_fYPos, (vec3)temp) * m_m4WorldTransform[1];
-	vec4 pitch = rotate((float)m_fXPos, vec3(0, 1, 0)) * m_m4WorldTransform[2];
+	mat4 yaw = rotate((float)m_fYPos, (vec3)temp);
+	mat4 pitch = rotate((float)m_fXPos, vec3(0, 1, 0));
 
-	m_m4WorldTransform[0] = temp;
-	m_m4WorldTransform[1] = yaw;
-	m_m4WorldTransform[2] = pitch;
-	
-	system("CLS");
-	for (int i = 0; i < 4; ++i)
-	{
-		cout
-			<< m_m4WorldTransform[i].x
-			<< m_m4WorldTransform[i].y
-			<< m_m4WorldTransform[i].z
-			<< m_m4WorldTransform[i].w
-			<< endl;
-	}
-
+	m_m4WorldTransform[0] = (pitch * yaw) * m_m4WorldTransform[0];
+	m_m4WorldTransform[1] = (pitch * yaw) * m_m4WorldTransform[1];
+	m_m4WorldTransform[2] = (pitch * yaw) * m_m4WorldTransform[2];
+	m_m4WorldTransform[3][3] = 1;
 	UpdateProjectionViewTransform();
 }
 
