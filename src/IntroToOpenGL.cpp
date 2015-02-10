@@ -1,6 +1,8 @@
 #include "IntroToOpenGL.h"
 #include <GLFW\glfw3.h>
 #include "Gizmos.h"
+#include <iostream>
+using namespace std;
 
 struct IntroToOpenGL::Planet
 {
@@ -77,16 +79,17 @@ bool IntroToOpenGL::Update()
 
 	Gizmos::addTransform(mat4(1));
 
-	for (int i = 0; i < 101; ++i)
-	{
-		Gizmos::addLine(vec3(-50 + i, 0, -50), vec3(-50 + i, 0, 50), i % 10 == 0 ? m_v4Blue : m_v4White);
-		Gizmos::addLine(vec3(-50, 0, -50 + i), vec3(50, 0, -50 + i), i % 10 == 0 ? m_v4Red : m_v4White);
-	}
-
-	Moon->Update(m_fTimer, m_v4Red);
-
 	m_m4View = glm::lookAt(vec3(cos(glm::radians(m_fRotation)) * 20, 10, sin(glm::radians(m_fRotation)) * 20), vec3(0, 0, 0), vec3(0, 1, 0));
 	Gizmos::draw(m_m4Projection, m_m4View);
+
+	system("CLS");
+	for (int i = 0; i < 4; ++i)
+	{
+		cout << " X." << i << ": " << glm::inverse(m_m4View)[i].x
+			<< " Y." << i << ": " << glm::inverse(m_m4View)[i].y
+			<< " Z." << i << ": " << glm::inverse(m_m4View)[i].z
+			<< " W." << i << ": " << glm::inverse(m_m4View)[i].w << endl;
+	}
 
 	glfwSwapBuffers(m_pWindow);
 	glfwPollEvents();
