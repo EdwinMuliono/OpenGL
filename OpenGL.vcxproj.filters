@@ -19,6 +19,12 @@
     <Filter Include="Source Files\Camera">
       <UniqueIdentifier>{7e8f8ccb-eca5-43ce-b043-3bf19faadced}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Rendering Geometry">
+      <UniqueIdentifier>{e0f1d079-5a1a-4fe0-bc4c-a6086aa89592}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Rendering Geometry">
+      <UniqueIdentifier>{7bf8e26f-3870-4f92-9cb7-b4583cd476d7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\gl_core_4_4.c">
@@ -45,6 +51,12 @@
     <ClCompile Include="src\Camera.cpp">
       <Filter>Source Files\Camera</Filter>
     </ClCompile>
+    <ClCompile Include="src\RenderingGeometry.cpp">
+      <Filter>Source Files\Rendering Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VertexShader.cpp">
+      <Filter>Source Files\Rendering Geometry</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\gl_core_4_4.h">
@@ -67,6 +79,18 @@
     </ClInclude>
     <ClInclude Include="src\FlyCamera.h">
       <Filter>Header Files\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RenderingGeometry.h">
+      <Filter>Header Files\Rendering Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GLMHeader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vertex.h">
+      <Filter>Header Files\Rendering Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VertexLoader.h">
+      <Filter>Header Files\Rendering Geometry</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

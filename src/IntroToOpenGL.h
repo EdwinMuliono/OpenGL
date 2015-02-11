@@ -2,12 +2,7 @@
 #define INTRO_TO_OPEN_GL
 
 #include "Application.h"
-
-#define GLM_SWIZZLE
-#include "glm/glm.hpp"
-#include "glm/ext.hpp"
-
-using namespace glm;
+#include "GLMHeader.h"
 
 class IntroToOpenGL : public Application
 {

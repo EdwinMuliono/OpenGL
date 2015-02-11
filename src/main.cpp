@@ -1,15 +1,15 @@
 #include "IntroToOpenGL.h"
 #include "CameraAndProjection.h"
+#include "RenderingGeometry.h"
 
 #include <iostream>
 
 using namespace std;
 
-int main()
-{
+int main(){
 	srand(int(0));
 	
-	CameraAndProjection app;
+	RenderingGeometry app;
 
 	if (!app.StartUp())
 	{
