@@ -18,8 +18,8 @@ bool RenderingGeometry::StartUp()
 
 	Gizmos::create();
 
-	GenerateGrid(2, 2);
 	LoaderShader("vsSource.glsl", "fsSource.glsl", &m_programID);
+	GenerateGrid(10, 10);
 
 	m_oCamera = new FlyCamera();
 
@@ -64,6 +64,7 @@ bool RenderingGeometry::Update()
 
 void RenderingGeometry::Draw()
 {
+	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	m_oCamera->Update((float)dt);
@@ -93,8 +94,8 @@ void RenderingGeometry::GenerateGrid(unsigned int a_uiRows, unsigned int a_uiCol
 	{
 		for (unsigned int j = 0; j < a_uiCols + 1; ++j)
 		{
-			vertex_array[j + i * a_uiCols].m_Postion = vec4(j, 0, i, 1);
-			vertex_array[j + i * a_uiCols].m_Color = vec4(1, 1, 1, 1);
+			vertex_array[j + i * (a_uiCols + 1)].m_Postion = vec4(j, 0, i, 1);
+			vertex_array[j + i * (a_uiCols + 1)].m_Color = vec4(1, 1, 1, 1);
 		}
 	}
 
@@ -123,7 +124,6 @@ void RenderingGeometry::GenerateGrid(unsigned int a_uiRows, unsigned int a_uiCol
 	
 	glGenBuffers(1, &m_VBO);
 	glGenBuffers(1, &m_IBO);
-
 	glGenVertexArrays(1, &m_VAO);
 	
 	glBindVertexArray(m_VAO);
@@ -141,7 +141,6 @@ void RenderingGeometry::GenerateGrid(unsigned int a_uiRows, unsigned int a_uiCol
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, a_uiRows * a_uiCols * 6 * sizeof(unsigned int), indexed_array, GL_STATIC_DRAW);
 
 	glBindVertexArray(0);
-
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 

@@ -35,10 +35,10 @@ bool LoaderShader(char * VertexShader, char * FragmentShader, GLuint* result)
 	unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
 	unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
 
-	glShaderSource(vertexShader, 1, &vs_Source, 0);
+	glShaderSource(vertexShader, 1, &vs_Source, &vertexlength);
 	glCompileShader(vertexShader);
 
-	glShaderSource(fragmentShader, 1, &fs_Source, 0);
+	glShaderSource(fragmentShader, 1, &fs_Source, &fraglength);
 	glCompileShader(fragmentShader);
 
 	result = new GLUint();
