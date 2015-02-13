@@ -93,6 +93,7 @@
     <ClCompile Include="src\IntroToOpenGL.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\RenderingGeometry.cpp" />
+    <ClCompile Include="src\tiny_obj_loader.cc" />
     <ClCompile Include="src\VertexShader.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -105,6 +106,7 @@
     <ClInclude Include="src\gl_core_4_4.h" />
     <ClInclude Include="src\IntroToOpenGL.h" />
     <ClInclude Include="src\RenderingGeometry.h" />
+    <ClInclude Include="src\tiny_obj_loader.h" />
     <ClInclude Include="src\Vertex.h" />
     <ClInclude Include="src\VertexLoader.h" />
   </ItemGroup>

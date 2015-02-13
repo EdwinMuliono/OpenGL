@@ -41,7 +41,6 @@ bool LoaderShader(char * VertexShader, char * FragmentShader, GLuint* result)
 	glShaderSource(fragmentShader, 1, &fs_Source, &fraglength);
 	glCompileShader(fragmentShader);
 
-	result = new GLUint();
 	*result = glCreateProgram();
 
 	glAttachShader(*result, vertexShader);
