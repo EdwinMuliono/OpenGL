@@ -49,16 +49,6 @@ bool RenderingGeometry::Update()
 	m_fTimer += (float)dt;
 	m_fRotation += 5.f * (float)dt;
 
-	//Gizmos::clear();
-	//
-	//Gizmos::addTransform(mat4(1));
-	//
-	//for (int i = 0; i < 101; ++i)
-	//{
-	//	Gizmos::addLine(vec3(-50 + i, 0, -50), vec3(-50 + i, 0, 50), i % 10 == 0 ? vec4(0, 0, 1, 1) : vec4(1, 1, 1, 1));
-	//	Gizmos::addLine(vec3(-50, 0, -50 + i), vec3(50, 0, -50 + i), i % 10 == 0 ? vec4(1, 0, 0, 1) : vec4(1, 1, 1, 1));
-	//}
-	
 	return true;
 }
 
@@ -108,13 +98,13 @@ void RenderingGeometry::GenerateGrid(unsigned int a_uiRows, unsigned int a_uiCol
 	{
 		for (unsigned int j = 0; j < a_uiCols; ++j)
 		{
-			indexed_array[IndexLocation + 0] = j + i * a_uiCols;
-			indexed_array[IndexLocation + 1] = (j + 1) + i * a_uiCols;
-			indexed_array[IndexLocation + 2] = (j + 1) + (i + 1) * a_uiCols;
+			indexed_array[IndexLocation + 0] = j + i * (a_uiCols + 1);
+			indexed_array[IndexLocation + 1] = (j + 1) + i * (a_uiCols + 1);
+			indexed_array[IndexLocation + 2] = (j + 1) + (i + 1) * (a_uiCols + 1);
 			
-			indexed_array[IndexLocation + 3] = j + i * a_uiCols;
-			indexed_array[IndexLocation + 4] = (j + 1) + (i + 1) * a_uiCols;
-			indexed_array[IndexLocation + 5] = j + (i + 1) * a_uiCols;
+			indexed_array[IndexLocation + 3] = j + i * (a_uiCols + 1);
+			indexed_array[IndexLocation + 4] = (j + 1) + (i + 1) * (a_uiCols + 1);
+			indexed_array[IndexLocation + 5] = j + (i + 1) * (a_uiCols + 1);
 
 			IndexLocation += 6;
 
