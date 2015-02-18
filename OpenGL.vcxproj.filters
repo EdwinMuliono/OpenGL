@@ -25,6 +25,12 @@
     <Filter Include="Source Files\Rendering Geometry">
       <UniqueIdentifier>{7bf8e26f-3870-4f92-9cb7-b4583cd476d7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Lighting">
+      <UniqueIdentifier>{ab07a5c1-eb94-4454-8a7a-a36cdb84556b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Lighting">
+      <UniqueIdentifier>{229ca5e5-f0a6-44ac-bcba-0c45c18ac6e9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\gl_core_4_4.c">
@@ -56,6 +62,9 @@
     </ClCompile>
     <ClCompile Include="src\VertexShader.cpp">
       <Filter>Source Files\Rendering Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\R%40zzle\Desktop\SourceTree\OpenGL\src\tiny_obj_loader.cc">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +100,12 @@
     </ClInclude>
     <ClInclude Include="src\VertexLoader.h">
       <Filter>Header Files\Rendering Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\R%40zzle\Desktop\SourceTree\OpenGL\src\Lighting.h">
+      <Filter>Header Files\Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\R%40zzle\Desktop\SourceTree\OpenGL\src\tiny_obj_loader.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
