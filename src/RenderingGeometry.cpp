@@ -134,8 +134,6 @@ void RenderingGeometry::GenerateGrid(unsigned int a_uiRows, unsigned int a_uiCol
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
-
-
 	delete[] vertex_array;
 	delete[] indexed_array;
 }

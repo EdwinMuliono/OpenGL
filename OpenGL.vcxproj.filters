@@ -66,6 +66,9 @@
     <ClCompile Include="..\..\..\..\R%40zzle\Desktop\SourceTree\OpenGL\src\tiny_obj_loader.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\R%40zzle\Desktop\SourceTree\OpenGL\src\Lighting.cpp">
+      <Filter>Source Files\Lighting</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\gl_core_4_4.h">

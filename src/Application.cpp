@@ -52,6 +52,11 @@ void Application::StopDown()
 
 bool Application::Update()
 {
+	if (glfwGetKey(glfwGetCurrentContext(), GLFW_KEY_ESCAPE) == GLFW_PRESS)
+	{
+		return false;
+	}
+
 	if (glfwWindowShouldClose(m_pWindow))
 	{
 		return false;
